@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://lp5jmiigjynf"]
+[gd_scene load_steps=3 format=3 uid="uid://lp5jmiigjynf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nm8sc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k1x8a"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.791124, 5.86171)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nm8sc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_k1x8a")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.947813, 0.318827, 0, -0.318827, 0.947813, 0, 2.02553, 4.45172)
+top_level = true
